@@ -1,0 +1,153 @@
+<div id="paper-neck-preview" class="viz-dotted-background">
+  <div class="pn-device" aria-label="Landscape guitar exercise concept">
+    <header class="pn-header">
+      <button class="pn-back cursor-interaction" type="button" aria-label="Leave practice"><i data-lucide="arrow-left" aria-hidden="true"></i></button>
+      <div class="pn-heading"><span class="pn-eyebrow">FRETBOARD NOTES / FOUNDATIONS</span><h2>Find F.</h2></div>
+      <span class="pn-mode">low E<br><span>guided practice</span></span>
+    </header>
+    <main class="pn-playing">
+      <div class="pn-caption"><span class="pn-task">Tap the thickest string.</span><span>open + frets 1–5</span></div>
+      <div class="pn-neck" role="group" aria-label="Guitar neck, high E above low E, open position and frets 1 through 5">
+        <svg class="pn-neck-drawing" aria-hidden="true"></svg>
+        <div class="pn-targets"></div>
+      </div>
+      <div class="pn-answer-buttons" hidden></div>
+    </main>
+    <footer class="pn-footer">
+      <div class="pn-message" role="status" aria-live="polite"><span class="pn-response">E to F is one fret.</span><span class="pn-detail">Start at open E. Move one fret to the right.</span></div>
+      <button class="pn-clue cursor-interaction" type="button">A little help</button>
+      <button class="pn-next cursor-interaction" type="button" disabled>Continue <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+    </footer>
+    <div class="pn-leave" hidden>
+      <div class="pn-leave-content"><h2>Take a breather?</h2><p>Your place stays here.</p><button type="button" class="pn-return cursor-interaction">Back to practice</button></div>
+    </div>
+  </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap');
+#paper-neck-preview{padding:24px 0 32px}
+#paper-neck-preview .pn-device{--pn-paper:#ffffdc;--pn-blue:#2479af;--pn-ink:#15537a;--pn-soft:#e2e4bd;--pn-level:color(display-p3 .93725 .90980 .44314);--pn-texture:.6;position:relative;width:100%;max-width:816px;margin:auto;background:var(--pn-paper);color:var(--pn-ink);border-radius:22px;padding:16px 24px 18px;font-family:'Kalam','Chalkboard SE','Bradley Hand',cursive;box-sizing:border-box;isolation:isolate;color-scheme:light;overflow:hidden;box-shadow:0 2px 18px #34415112}
+#paper-neck-preview .pn-device *{box-sizing:border-box}
+#paper-neck-preview .pn-device::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.11;background-image:repeating-linear-gradient(99deg,transparent 0 3px,#a8a06d18 3px 4px),repeating-linear-gradient(4deg,transparent 0 7px,#a8a06d15 7px 8px)}
+#paper-neck-preview button{font:inherit;color:inherit;touch-action:manipulation}
+#paper-neck-preview button:disabled{cursor:default}
+#paper-neck-preview .pn-header{display:flex;align-items:center;gap:17px;min-height:62px;padding-right:85px}
+#paper-neck-preview .pn-back{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;border:0;background:transparent;color:var(--pn-blue)}
+#paper-neck-preview .pn-heading{flex:1;min-width:0}
+#paper-neck-preview .pn-eyebrow{font-family:'DM Sans',system-ui,sans-serif;font-size:10px;letter-spacing:1.6px;color:var(--pn-ink);display:block;margin-bottom:4px}
+#paper-neck-preview h2{font:700 32px/1 'Kalam','Chalkboard SE',cursive;letter-spacing:-.5px;margin:0;color:var(--pn-blue);text-shadow:.2px .3px 0 currentColor}
+#paper-neck-preview .pn-mode{font-size:17px;text-align:right;white-space:nowrap;line-height:1.1;transform:rotate(-2deg)}
+#paper-neck-preview .pn-mode span{font-size:11px}
+#paper-neck-preview .pn-mode::after{content:'';display:block;height:4px;background:var(--pn-level);border-radius:40%;margin-top:7px;transform:rotate(2deg)}
+#paper-neck-preview .pn-playing{margin:5px 0 0}
+#paper-neck-preview .pn-caption{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 7px 0 0;font-size:12px;color:var(--pn-ink);min-height:23px}
+#paper-neck-preview .pn-task{font-size:14px}
+#paper-neck-preview .pn-neck{width:100%;height:225px;position:relative}
+#paper-neck-preview .pn-neck-drawing{position:absolute;inset:0;width:100%;height:100%;overflow:visible;color:var(--pn-blue)}
+#paper-neck-preview .pn-neck-drawing text{font-family:'Kalam','Chalkboard SE',cursive;fill:var(--pn-ink);font-size:13px}
+#paper-neck-preview .pn-neck-drawing .pn-line{stroke:var(--pn-blue);fill:none;stroke-linecap:round;stroke-linejoin:round}
+#paper-neck-preview .pn-targets{position:absolute;inset:0}
+#paper-neck-preview .pn-target{position:absolute;height:44px;border:0;background:transparent;display:grid;place-items:center;padding:0;transform:translateY(-50%);border-radius:6px}
+#paper-neck-preview .pn-target span{display:grid;place-items:center;min-width:31px;height:33px;color:var(--pn-ink);font-size:21px;line-height:1;border-radius:48% 53% 45% 55%;background:transparent;transform:rotate(-5deg)}
+#paper-neck-preview .pn-target:hover:not(:disabled) span{background:var(--pn-level)}
+#paper-neck-preview .pn-target.pn-selected span{background:var(--pn-level);outline:2px solid var(--pn-blue);outline-offset:2px}
+#paper-neck-preview .pn-target.pn-revealed span{outline:2px dashed var(--pn-blue);background:var(--pn-level)}
+#paper-neck-preview .pn-target.pn-wrong span{outline:2px solid var(--pn-blue);background:var(--pn-paper)}
+#paper-neck-preview .pn-footer{display:flex;align-items:center;gap:12px;min-height:57px;padding-top:6px;border-top:1px solid #2479af38}
+#paper-neck-preview .pn-message{flex:1;min-width:0;line-height:1.2}
+#paper-neck-preview .pn-response{display:block;font-size:18px;font-weight:700;color:var(--pn-blue)}
+#paper-neck-preview .pn-detail{font-family:'DM Sans',system-ui,sans-serif;font-size:11px;line-height:1.4;display:block;margin-top:4px;max-width:390px}
+#paper-neck-preview .pn-clue{min-height:44px;flex-shrink:0;background:transparent;border:0;border-bottom:1px solid var(--pn-blue);font-size:14px;padding:7px 4px;transform:rotate(-1deg)}
+#paper-neck-preview .pn-next,#paper-neck-preview .pn-return{display:flex;align-items:center;justify-content:center;gap:12px;border:2px solid var(--pn-blue);border-radius:6px 9px 7px 5px / 7px 5px 9px 6px;background:var(--pn-blue);color:var(--pn-paper);min-height:44px;padding:9px 17px;font-size:16px;flex-shrink:0}
+#paper-neck-preview .pn-next:disabled{background:transparent;color:#6d8379;border-color:#829c8d66}
+#paper-neck-preview .pn-answer-buttons{display:flex;justify-content:center;gap:8px;padding:0;margin:0}
+#paper-neck-preview .pn-answer-buttons button{min-height:44px;min-width:44px;background:transparent;border:2px solid var(--pn-blue);border-radius:45% 49% 44% 50%;font-size:22px}
+#paper-neck-preview [hidden]{display:none!important}
+#paper-neck-preview .pn-leave{position:absolute;inset:0;background:var(--pn-paper);z-index:4;display:grid;place-items:center;text-align:center}
+#paper-neck-preview .pn-leave-content{padding:20px}
+#paper-neck-preview .pn-leave-content p{font-size:18px}
+#paper-neck-preview .pn-return{margin:auto}
+@media(max-width:580px){#paper-neck-preview .pn-device{padding:14px 12px;border-radius:14px}#paper-neck-preview .pn-header{gap:6px;padding-right:80px;align-items:flex-start}#paper-neck-preview .pn-mode{display:none}#paper-neck-preview .pn-eyebrow{font-size:10px;letter-spacing:.7px}#paper-neck-preview h2{font-size:28px}#paper-neck-preview .pn-caption{margin-top:8px;flex-wrap:wrap;gap:3px}#paper-neck-preview .pn-footer{flex-wrap:wrap}#paper-neck-preview .pn-message{flex-basis:100%}#paper-neck-preview .pn-clue{margin-right:auto}#paper-neck-preview .pn-neck{height:235px}}
+</style>
+<script>
+(() => {
+ const root=document.getElementById('paper-neck-preview');
+ const phone=root.querySelector('.pn-device');
+ const neck=root.querySelector('.pn-neck');
+ const drawing=root.querySelector('.pn-neck-drawing');
+ const targets=root.querySelector('.pn-targets');
+ const next=root.querySelector('.pn-next');
+ const clue=root.querySelector('.pn-clue');
+ const choices=root.querySelector('.pn-answer-buttons');
+ root.querySelector('.pn-footer').insertBefore(choices,clue);
+ const title=root.querySelector('h2');
+ const task=root.querySelector('.pn-task');
+ const response=root.querySelector('.pn-response');
+ const detail=root.querySelector('.pn-detail');
+ const mode=root.querySelector('.pn-mode');
+ const leave=root.querySelector('.pn-leave');
+ const questions=[{kind:'find',target:'F',row:5,fret:1},{kind:'find',target:'G',row:5,fret:3},{kind:'name',target:'F',row:5,fret:1},{kind:'find',target:'B',row:4,fret:2},{kind:'find',target:'C',row:4,fret:3},{kind:'name',target:'B',row:4,fret:2}];
+ const pitches=[['E','F','F♯','G','G♯','A'],['B','C','C♯','D','D♯','E'],['G','G♯','A','A♯','B','C'],['D','D♯','E','F','F♯','G'],['A','A♯','B','C','C♯','D'],['E','F','F♯','G','G♯','A']];
+ const saved=window.openai?.widgetState?.privateContent;
+ const state={version:1,index:0,solved:false,help:false,wrong:null,...(saved?.version===1?saved:{})};
+ const design={texture:.7,stringWeight:1};
+ function question(){return questions[state.index%questions.length];}
+ function persist(){window.openai?.setWidgetState?.({modelContent:{concept:'Textured landscape fretboard',task:question().kind,target:question().target,helpUsed:state.help,solved:state.solved},privateContent:state})?.catch(()=>{});}
+ function geometry(){const w=neck.clientWidth;const nut=62;const end=w-7;const count=w<380?4:5;const sum=Array.from({length:count},(_,n)=>Math.pow(2,-n/12)).reduce((a,b)=>a+b,0);const boundaries=[nut];let pos=nut;for(let f=0;f<count;f++){pos+=(end-nut)*Math.pow(2,-f/12)/sum;boundaries.push(pos);}return {w,nut,end,boundaries,count,y:question().row*35+17};}
+ function paint(){
+  const {w,nut,end,boundaries,count,y}=geometry();const q=question();
+  root.querySelector('.pn-caption span:last-child').textContent=`open + frets 1–${count}`;
+  neck.setAttribute('aria-label',`Guitar neck, high E above low E, open position and frets 1 through ${count}`);
+  const rowY=row=>17+row*35;
+  let svg=`<defs><filter id="pn-rough"><feTurbulence type="fractalNoise" baseFrequency=".065 .45" numOctaves="2" seed="12" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="${design.texture*1.6}" xChannelSelector="R" yChannelSelector="G"/></filter></defs>`;
+  svg+=`<path d="M${nut} 5 Q${w*.48} 3 ${end} 4 L${end} 205 Q${w*.5} 207 ${nut} 204 Z" fill="#2479af04" stroke="#2479af66" stroke-width="1.2" filter="url(#pn-rough)"/>`;
+  svg+=`<rect x="${nut-4}" y="3" width="7" height="205" rx="1" fill="var(--pn-blue)" filter="url(#pn-rough)"/>`;
+  boundaries.slice(1,-1).forEach((x,i)=>{svg+=`<path class="pn-line" d="M${x} 5 Q${x+1.1} 107 ${x-.4} 204" stroke-width="1.5" filter="url(#pn-rough)"/>`;});
+  [2,4].filter(f=>f<count).forEach(f=>{const x=(boundaries[f]+boundaries[f+1])/2;svg+=`<circle cx="${x}" cy="104.5" r="4.5" fill="var(--pn-blue)" opacity=".28"/>`;});
+  for(let row=0;row<6;row++){
+   const py=rowY(row);const active=row===q.row;
+   svg+=`<path class="pn-line" d="M33 ${py} Q${w*.55} ${py+.35} ${end} ${py}" stroke-width="${(1+row*.47)*design.stringWeight}" ${active?'':'stroke-dasharray="7 7"'} opacity="${active?1:.57}" filter="url(#pn-rough)"/>`;
+   svg+=`<text x="10" y="${py+5}" text-anchor="middle" opacity="${active?1:.65}">${row+1}</text>`;
+   if(q.kind==='find') svg+=`<text x="44" y="${py+5}" text-anchor="middle" fill="var(--pn-ink)" stroke="var(--pn-paper)" stroke-width="5" paint-order="stroke">${pitches[row][0]}</text>`;
+  }
+  svg+=`<text x="44" y="221" text-anchor="middle">open</text>`;
+  for(let f=1;f<=count;f++)svg+=`<text x="${(boundaries[f-1]+boundaries[f])/2}" y="221" text-anchor="middle">${f}</text>`;
+  if(q.kind==='name'){const cx=(boundaries[q.fret-1]+boundaries[q.fret])/2;svg+=`<circle cx="${cx}" cy="${y}" r="14" fill="var(--pn-level)" stroke="var(--pn-blue)" stroke-width="2" filter="url(#pn-rough)"/><text x="${cx}" y="${y+6}" text-anchor="middle" style="font-size:20px">${state.solved?q.target:'?'}</text>`;}
+  drawing.innerHTML=svg;
+  targets.innerHTML='';
+  if(q.kind==='find')for(let f=0;f<=count;f++){
+   const left=f===0?18:boundaries[f-1],right=f===0?nut:boundaries[f];
+   const b=document.createElement('button');b.type='button';b.className='pn-target cursor-interaction';b.dataset.fret=f;b.style.left=left+'px';b.style.width=(right-left)+'px';b.style.top=y+'px';b.disabled=state.solved;
+   b.setAttribute('aria-label',`String ${q.row+1}, ${f===0?'open':`fret ${f}`}`);b.setAttribute('aria-pressed',String(state.solved&&f===q.fret));
+   const marker=document.createElement('span');
+   if(state.solved&&f===q.fret){b.classList.add('pn-selected');marker.textContent=q.target;}
+   else if(state.help&&f===q.fret){b.classList.add('pn-revealed');marker.textContent=q.target;}
+   else if(state.wrong===f){b.classList.add('pn-wrong');marker.textContent='×';}
+   b.appendChild(marker);targets.appendChild(b);
+  }
+ }
+ function render(){
+  const q=question();title.textContent=q.kind==='find'?`Find ${q.target}.`:'Name this note.';
+  const string=q.row===5?'low E':'A';
+  task.textContent=q.kind==='find'?`Tap the ${q.row===5?'thickest':'A'} string.`:`String ${q.row+1} · fret ${q.fret}`;
+  mode.innerHTML=`${string}<br><span>guided practice</span>`;
+  next.disabled=!state.solved;next.hidden=q.kind==='name'&&!state.solved;clue.disabled=state.solved;
+  choices.hidden=q.kind!=='name'||state.solved;choices.innerHTML='';
+  if(q.kind==='name')for(const note of(q.row===5?['G','E','F']:['C','A','B'])){const b=document.createElement('button');b.type='button';b.className='cursor-interaction';b.textContent=note;b.dataset.note=note;b.disabled=state.solved;choices.appendChild(b);}
+  if(state.solved){response.textContent=`That’s ${q.target}.`;detail.textContent=state.help?'Found with help. We’ll revisit it later.':`${string} string · fret ${q.fret}.`;}
+  else if(state.wrong!==null){response.textContent=`That’s ${pitches[q.row][state.wrong]}.`;detail.textContent=`${q.target} is at fret ${q.fret}. Try the marked spot.`;}
+  else if(state.help){response.textContent=`${q.target} is at fret ${q.fret}.`;detail.textContent=q.target==='F'?'E → F: one fret. Tap the marked spot.':q.target==='G'?'F → F♯ → G: two frets. Tap the marked spot.':q.target==='B'?'A → A♯ → B: two frets.': 'B → C: one fret.';}
+  else {response.textContent=q.kind==='name'?'What note is marked?':q.target==='F'?'E to F is one fret.':q.target==='G'?'F to G is two frets.':q.target==='B'?'A to B is two frets.':'B to C is one fret.';detail.textContent=q.kind==='name'?'Choose a note name.':`Start ${q.target==='F'||q.target==='B'?'at the open string':'from the note you just found'}. Move to the right.`;}
+  paint();
+ }
+ targets.addEventListener('click',event=>{const b=event.target.closest('[data-fret]');if(!b||b.disabled)return;const f=Number(b.dataset.fret),q=question();if(f===q.fret){state.solved=true;state.wrong=null;render();}else{state.help=true;state.wrong=f;render();response.textContent=`That’s ${pitches[q.row][f]}.`;detail.textContent=`${q.target} is at fret ${q.fret}. Try the marked spot.`;}persist();});
+ choices.addEventListener('click',event=>{const b=event.target.closest('[data-note]');if(!b||b.disabled)return;if(b.dataset.note===question().target){state.solved=true;render();}else{state.help=true;render();response.textContent=`This note is ${question().target}.`;detail.textContent='Choose its name, then we’ll keep practicing.';}persist();});
+ clue.addEventListener('click',()=>{state.help=true;render();persist();});
+ next.addEventListener('click',()=>{if(!state.solved)return;state.index=(state.index+1)%questions.length;state.solved=false;state.help=false;state.wrong=null;render();persist();});
+ root.querySelector('.pn-back').addEventListener('click',()=>{leave.hidden=false;root.querySelector('.pn-return').focus();});
+ root.querySelector('.pn-return').addEventListener('click',()=>{leave.hidden=true;root.querySelector('.pn-back').focus();});
+ window.addEventListener('openai:set_globals',event=>{const incoming=event.detail?.globals?.widgetState?.privateContent;if(incoming?.version===1){Object.assign(state,incoming);render();}});
+ const observer=new ResizeObserver(paint);observer.observe(neck);render();
+ if(globalThis.Tweak){const tweak=new Tweak({container:phone,onChange:paint});tweak.addSlider(design,'texture',{label:'Line texture',min:0,max:1.5,step:.1});tweak.addSlider(design,'stringWeight',{label:'String weight',min:.7,max:1.4,step:.1});}
+})();
+</script>
